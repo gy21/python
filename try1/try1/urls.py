@@ -2,10 +2,12 @@ from django.conf.urls import patterns, include, url
 
 from django.contrib import admin
 
+admin.autodiscover()
 
 urlpatterns = patterns('',
     # Examples:
-    # url(r'^$', 'try1.views.home', name='home'),
+    # this will look up the signups app for the views.py file and tries to find a home view
+    url(r'^$', 'signups.views.home', name='home'),
     # url(r'^try1/', include('try1.try1.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:

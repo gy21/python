@@ -7,6 +7,8 @@ TEMPLATE_DEBUG = DEBUG
 #add the database file under the root folder
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+#It's just for avoidng hard coded stuf
+#BASE_DIR = "/Users/hah/start/try1/try1"
 
 ADMINS = (
     ('emmaguo', 'uw.yanguo@gmail.com'),
@@ -114,7 +116,10 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+    os.path.join(os.path.dirname(BASE_DIR), "static", "templates"),
 )
+
+
 
 INSTALLED_APPS = (
     'django.contrib.auth',
@@ -126,6 +131,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'try1',
     'django.contrib.admindocs',
+    'signups',
 )
 
 # A sample logging configuration. The only tangible logging

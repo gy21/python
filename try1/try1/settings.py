@@ -1,11 +1,12 @@
 # Django settings for try1 project.
+import os
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 
 #add the database file under the root folder
-import os
+
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 #It's just for avoidng hard coded stuf
 #BASE_DIR = "/Users/hah/start/try1/try1"
@@ -112,14 +113,6 @@ ROOT_URLCONF = 'try1.urls'
 # Python dotted path to the WSGI application used by Django's runserver.
 WSGI_APPLICATION = 'try1.wsgi.application'
 
-TEMPLATE_DIRS = (
-    # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
-    # Always use forward slashes, even on Windows.
-    # Don't forget to use absolute paths, not relative paths.
-    os.path.join(os.path.dirname(BASE_DIR), "static", "templates"),
-)
-
-
 
 INSTALLED_APPS = (
     'django.contrib.auth',
@@ -133,6 +126,27 @@ INSTALLED_APPS = (
     'django.contrib.admindocs',
     'signups',
 )
+
+#not for alive prod environment
+if DEBUG:
+    MEDIA_URL = '/media/'
+    STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static", "static-only")
+    MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static", "media")
+    #Here is where to put css and js files
+    STATICFILES_DIRS = TEMPLATE_DIRS = (
+        os.path.join(os.path.dirname(BASE_DIR), "static", "static"),
+)
+
+
+
+TEMPLATE_DIRS = (
+    # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
+    # Always use forward slashes, even on Windows.
+    # Don't forget to use absolute paths, not relative paths.
+    os.path.join(os.path.dirname(BASE_DIR), "static", "templates"),
+)
+
+
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to

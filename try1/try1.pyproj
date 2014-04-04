@@ -32,6 +32,7 @@
   <ItemGroup>
     <Compile Include="manage.py" />
     <Compile Include="signups\admin.py" />
+    <Compile Include="signups\forms.py" />
     <Compile Include="signups\models.py" />
     <Compile Include="signups\tests.py" />
     <Compile Include="signups\views.py" />
@@ -62,8 +63,8 @@
     <InterpreterReference Include="{9a7a9026-48c1-4688-9d5d-e5699d47d074}\2.7" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="signups\templates\base.html" />
     <Content Include="signups\templates\index.html" />
-    <Content Include="static\templates\signup.html" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\Python Tools\Microsoft.PythonTools.Django.targets" />
   <ProjectExtensions>

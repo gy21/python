@@ -1,13 +1,10 @@
-<!DOCTYPE html>
-    <html>
-        <head>
+{% extends 'base.html' %}
 
-        </head>
+{% block content %}
+<h1>Please sign up here</h1>
+<form method='POST' action = ''> {% csrf_token %}
+	{{form.as_p}}
+	<input type='submit'></input>
+</form>
 
-        <body>
-            This is HTML!
-
-        </body>
-
-
-    </html>
+{% endblock %} 

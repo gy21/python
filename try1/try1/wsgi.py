@@ -13,6 +13,9 @@ middleware here, or combine a Django application with an application of another
 framework.
 
 """
+
+
+#a Python script used to help run your development server and deploy your project to a production environment.
 import os
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "try1.settings")

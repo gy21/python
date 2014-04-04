@@ -31,6 +31,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="manage.py" />
+    <Compile Include="signups\models.py" />
+    <Compile Include="signups\tests.py" />
+    <Compile Include="signups\views.py" />
+    <Compile Include="signups\__init__.py" />
     <Compile Include="try1\__init__.py" />
     <Compile Include="try1\settings.py" />
     <Compile Include="try1\urls.py" />
@@ -49,10 +53,15 @@
     </WebPiReference>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="signups\" />
+    <Folder Include="signups\templates\" />
     <Folder Include="try1\" />
   </ItemGroup>
   <ItemGroup>
     <InterpreterReference Include="{9a7a9026-48c1-4688-9d5d-e5699d47d074}\2.7" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="signups\templates\index.html" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\Python Tools\Microsoft.PythonTools.Django.targets" />
   <ProjectExtensions>
